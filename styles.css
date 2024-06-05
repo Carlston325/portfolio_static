@@ -1,0 +1,360 @@
+body {
+  width: 100%;
+  margin: 0;
+  text-align: start;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  width: 100%;
+}
+
+h2 {
+  /* width: 65%; */
+  color: #000000;
+  margin: 0;
+  font-family: "Aclonica", sans-serif;
+  font-size: 30px;
+}
+
+p {
+  color: #b18a00;
+  margin: 0;
+  padding-top: 20px;
+  font-family: "Sono", sans-serif;
+}
+
+.btn {
+  width: inherit;
+  padding: 4px 8px;
+  font-family: "Aclonica", sans-serif;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.header {
+  background-image: url("./assets/images/Background/hero_background_dark.png");
+  display: flex;
+  height: 60px;
+  align-items: start;
+}
+.header-card {
+  width: inherit;
+  margin: 5px 10px;
+  text-align: end;
+  flex: 1;
+}
+.header-card1 {
+  flex: 3.5;
+  align-self: center;
+}
+.header-card > h3 {
+  color: #fff;
+  width: inherit;
+  margin: 0 auto;
+  font-weight: 100;
+  font-family: "Sono", sans-serif;
+  font-variant: small-caps;
+  font-size: 25px;
+  text-align: start;
+}
+.header-card > a .btn {
+  color: #daa000;
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #ffeba200;
+  border: 0;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-family: "Sono", sans-serif;
+}
+
+.hero {
+  background-image: url("./assets/images/Background/hero_background.png");
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  text-align: center;
+}
+.hero > h1 {
+  grid-area: 1/1/2/3;
+  color: #fff;
+  margin: 10px auto;
+  padding: 10px;
+  font-weight: 400;
+  font-family: "Aclonica", sans-serif;
+  font-size: 60px;
+  font-variant: small-caps;
+}
+.hero > div {
+  /* width: 90%; */
+  margin: 20px auto;
+  align-self: self-start;
+}
+.hero > div > img {
+  width: 300px;
+  border-radius: 50%;
+}
+.hero > div > h2 {
+  color: #daa000;
+  font-size: 20px;
+  text-align: start;
+}
+.skills {
+  margin: 0 auto;
+  padding: 10px 0px;
+  display: grid;
+  grid-template: 1fr 1fr/1fr 1fr;
+  gap: 5px;
+  justify-items: center;
+  text-align: center;
+}
+.skills > a {
+  grid-area: 4/1/5/3;
+  width: 95%;
+}
+.skills > .logo {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+
+.hero > div > .skills > a > .btn {
+  background-color: white;
+  /* width: 30%; */
+  margin: 10px auto;
+  border: 2px solid black;
+  font-weight: 600;
+}
+
+.showcaseContainer {
+  width: 100%;
+  margin: 300px auto;
+  margin-bottom: 60px;
+  background-color: #fffffff1;
+}
+.showcaseContainer > h2 {
+  margin: 4px auto;
+  padding: 0 10px;
+  font-size: 30px;
+  text-align: center;
+}
+.showcase-grid {
+  margin: 60px auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 10px;
+  text-align: center;
+}
+.showcase-card {
+  padding: 2%;
+}
+.showcase-card > h2 {
+  color: #000000;
+  width: 100%;
+  font-size: 24px;
+  text-align: start;
+}
+.showcase-img {
+  width: 510px;
+  height: 410px;
+  border: 5px double #000000;
+  padding: 4px;
+  margin: 20px 0;
+}
+.showcase-card > p {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: start;
+}
+.showcase-card > a .btn {
+  width: inherit;
+  margin: 10px 0;
+  padding: 4px 8px;
+  font-family: "Aclonica", sans-serif;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.about {
+  width: 100%;
+  padding-top: 30px;
+  text-align: start;
+}
+.about > h2 {
+  width: 65%;
+  margin-top: 40px;
+  position: relative;
+  left: 150px;
+}
+.about > p {
+  width: 65%;
+  position: relative;
+  left: 150px;
+  font-size: 18px;
+}
+.about > ul {
+  color: #daa000;
+  width: 65%;
+  position: relative;
+  left: 150px;
+  font-size: 18px;
+}
+.about > address {
+  width: 500px;
+  padding: 20px;
+  font-size: 20px;
+  position: relative;
+  left: 150px;
+  font-size: 18px;
+}
+
+.footer {
+  background-image: url("./assets/images/Background/hero_background.png");
+  color: #daa00091;
+  margin-top: 40px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.footer-card {
+  color: #fff1bf;
+  width: 200px;
+  flex-basis: 300px;
+}
+.copyright {
+  color: #d8b844a8;
+  width: 100%;
+  padding: 0;
+}
+
+@media (max-width: 850px) {
+  .header {
+    height: 200px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .header-card {
+    width: 90%;
+    margin: 0 10px;
+    text-align: center;
+    flex: 1;
+    padding: 5px 0;
+  }
+  .header-card > h3 {
+    position: relative;
+    left: 2%;
+  }
+  .header-card > a .btn {
+    font-weight: 600;
+  }
+  .showcase-img {
+    width: 400px;
+    height: 250px;
+  }
+
+  .about {
+    text-align: center;
+  }
+  .about > h2 {
+    width: 100%;
+    position: static;
+  }
+  .about > p {
+    width: 100%;
+    position: static;
+    text-align: center;
+  }
+  .about > ul {
+    position: static;
+    text-align: start;
+  }
+  .about > address {
+    width: inherit;
+    padding: 20px 0;
+    position: static;
+    font-size: 15px;
+  }
+
+  .footer {
+    padding-top: 20px;
+    height: 100%;
+    flex-direction: column;
+  }
+  .footer-card {
+    width: 100%;
+    flex-basis: 40px;
+  }
+  .copyright {
+    flex-basis: 40px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1100px) {
+  .showcase-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .showcase-card > h2 {
+    text-align: center;
+  }
+  .showcase-card > p {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+@media (max-width: 650px) {
+  .hero > div > img {
+    width: 200px;
+  }
+  .showcase-img {
+    width: 350px;
+    height: 250px;
+    padding: 0;
+  }
+}
+@media (max-width: 360px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero > div > h2 {
+    text-align: center;
+  }
+  .showcaseContainer {
+    margin: 100px auto;
+    margin-bottom: 40px;
+  }
+  .showcase-img {
+    width: 290px;
+    height: 200px;
+  }
+  .about {
+    padding-top: 10px;
+  }
+  .about > h2 {
+    margin-top: 10px;
+  }
+}
+
+.btnHighlight {
+  color: #fff1bf !important;
+  background-color: #6b6b6b81 !important;
+  padding: 4px 8px;
+  border: 3px rgb(255, 255, 255) solid !important;
+  border-radius: 50px;
+}

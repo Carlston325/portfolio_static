@@ -120,7 +120,6 @@ p {
   height: 50px;
   margin: 5px;
 }
-
 .hero > div > .skills > a > .btn {
   background-color: white;
   /* width: 30%; */
@@ -130,7 +129,7 @@ p {
 }
 .showcaseContainer {
   width: 100%;
-  margin: 300px auto;
+  margin: 200px auto;
   margin-bottom: 60px;
 }
 .showcaseContainer > h2 {

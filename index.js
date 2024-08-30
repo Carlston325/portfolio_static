@@ -84,37 +84,48 @@ const mapShowcases = showcases.map((showcase) => {
     return `
     <div class="showcase-card">
       <img class="showcase-img" src=${showcase.image} />
-      <h2>${showcase.title}</h2>
-      <p>${showcase.description}</p>
-      <a href=${showcase.link}>
-        <button class="btn">Visit</button>
-      </a>
-      
+      <div>
+        <h2>${showcase.title}</h2>
+        <p>${showcase.description}</p>
+      </div>
+      <div> 
+        <a href=${showcase.link}>
+          <button class="btn">Visit</button>
+        </a>
+      </div>
     </div>
   `;
   } else if (showcase.websiteLink === undefined) {
     return `
     <div class="showcase-card">
       <img class="showcase-img" src=${showcase.image} />
-      <h2>${showcase.title}</h2>
-      <p>${showcase.description}</p>
-       <a href=${showcase.githubLink}>
-        <button class="btn">Github</button>
-      </a>
+      <div>
+        <h2>${showcase.title}</h2>
+        <p>${showcase.description}</p>
+      </div>
+       <div>
+        <a href=${showcase.githubLink}>
+          <button class="btn">Github</button>
+        </a>
+      </div>
     </div>
   `;
   } else {
     return `
     <div class="showcase-card">
       <img class="showcase-img" src=${showcase.image} />
-      <h2>${showcase.title}</h2>
-      <p>${showcase.description}</p>
-      <a href=${showcase.websiteLink}>
-        <button class="btn">Live</button>
-      </a>
-       <a href=${showcase.githubLink}>
-        <button class="btn">Github</button>
-      </a>
+      <div>
+        <h2>${showcase.title}</h2>
+        <p>${showcase.description}</p>
+      </div>
+      <div>
+        <a href=${showcase.websiteLink}>
+          <button class="btn">Live</button>
+        </a>
+        <a href=${showcase.githubLink}>
+          <button class="btn">Github</button>
+        </a>
+      </div>
     </div>
   `;
   }

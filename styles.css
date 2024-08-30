@@ -1,9 +1,11 @@
 body {
+  background-color: #d4dbff;
+  background-image: url("https://www.transparenttextures.com/patterns/diagonales-decalees.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   width: 100%;
   margin: 0;
   text-align: start;
 }
-
 .container {
   width: 100%;
   display: flex;
@@ -12,7 +14,6 @@ body {
 .card {
   width: 100%;
 }
-
 h2 {
   /* width: 65%; */
   color: #000000;
@@ -20,14 +21,12 @@ h2 {
   font-family: "Aclonica", sans-serif;
   font-size: 30px;
 }
-
 p {
   color: #b18a00;
   margin: 0;
   padding-top: 20px;
   font-family: "Sono", sans-serif;
 }
-
 .btn {
   width: inherit;
   padding: 4px 8px;
@@ -35,7 +34,6 @@ p {
   text-transform: uppercase;
   background-color: transparent;
 }
-
 .header {
   background-image: url("./assets/images/Background/hero_background_dark.png");
   display: flex;
@@ -72,7 +70,6 @@ p {
   text-transform: capitalize;
   font-family: "Sono", sans-serif;
 }
-
 .hero {
   background-image: url("./assets/images/Background/hero_background.png");
   display: grid;
@@ -131,12 +128,10 @@ p {
   border: 2px solid black;
   font-weight: 600;
 }
-
 .showcaseContainer {
   width: 100%;
   margin: 300px auto;
   margin-bottom: 60px;
-  background-color: #fffffff1;
 }
 .showcaseContainer > h2 {
   margin: 4px auto;
@@ -148,15 +143,25 @@ p {
   margin: 60px auto;
   padding: 10px;
   display: grid;
+  justify-items: center;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   gap: 10px;
   text-align: center;
 }
 .showcase-card {
+  background-color: #fcfcfc;
+  background-image: url("https://www.transparenttextures.com/patterns/green-fibers.png");
+  width: 70%;
+  margin: 10px;
   padding: 2%;
+  box-shadow: 0.5px 0.5px 6px 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
-.showcase-card > h2 {
+.showcase-card > div > h2 {
   color: #000000;
   width: 100%;
   font-size: 24px;
@@ -166,10 +171,9 @@ p {
   width: 510px;
   height: 410px;
   border: 5px double #000000;
-  padding: 4px;
   margin: 20px 0;
 }
-.showcase-card > p {
+.showcase-card > div > p {
   width: 100%;
   margin: 10px 0;
   padding: 10px 0;
@@ -177,7 +181,7 @@ p {
   font-weight: 600;
   text-align: start;
 }
-.showcase-card > a .btn {
+.showcase-card > div > a .btn {
   width: inherit;
   margin: 10px 0;
   padding: 4px 8px;
@@ -185,7 +189,6 @@ p {
   text-transform: uppercase;
   background-color: transparent;
 }
-
 .about {
   width: 100%;
   padding-top: 30px;
@@ -308,11 +311,12 @@ p {
   .showcase-grid {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
-  .showcase-card > h2 {
+  .showcase-card > div > h2 {
     text-align: center;
   }
-  .showcase-card > p {
+  .showcase-card > div > p {
     font-size: 18px;
     text-align: center;
   }

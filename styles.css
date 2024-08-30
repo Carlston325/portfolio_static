@@ -34,6 +34,13 @@ p {
   text-transform: uppercase;
   background-color: transparent;
 }
+.btnHighlight {
+  color: #ffd53f !important;
+  background-color: #6b6b6bbe !important;
+  padding: 4px 8px;
+  border-radius: 50px;
+  text-shadow: 0px 0px 4px #ff3a00;
+}
 .header {
   background-image: url("./assets/images/Background/hero_background_dark.png");
   display: flex;
@@ -149,8 +156,8 @@ p {
   text-align: center;
 }
 .showcase-card {
-  background-color: #fcfcfc;
-  background-image: url("https://www.transparenttextures.com/patterns/green-fibers.png");
+  background-color: #f7fdff;
+  background-image: url("https://www.transparenttextures.com/patterns/grid-me.png");
   width: 70%;
   margin: 10px;
   padding: 2%;
@@ -165,6 +172,7 @@ p {
   width: 100%;
   font-size: 24px;
   text-align: start;
+  text-shadow: 2px 1px 2px #ffbc3db0;
 }
 .showcase-img {
   width: 510px;
@@ -179,6 +187,7 @@ p {
   font-size: 20px;
   font-weight: 600;
   text-align: start;
+  text-shadow: 1px 1px 0px #000000b0;
 }
 .showcase-card > div > a .btn {
   width: inherit;
@@ -186,7 +195,7 @@ p {
   padding: 4px 8px;
   font-family: "Aclonica", sans-serif;
   text-transform: uppercase;
-  background-color: transparent;
+  background-color: white;
 }
 .about {
   width: 100%;
@@ -352,12 +361,4 @@ p {
   .about > h2 {
     margin-top: 10px;
   }
-}
-
-.btnHighlight {
-  color: #ffd53f !important;
-  background-color: #6b6b6b81 !important;
-  padding: 4px 8px;
-  border-radius: 50px;
-  text-shadow: 0px 0px 4px #ff3a00;
 }

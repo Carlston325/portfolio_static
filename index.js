@@ -133,7 +133,6 @@ const mapShowcases = showcases.map((showcase) => {
 document.getElementById("showcase-container").innerHTML = mapShowcases.join("");
 
 const numberOfButtons = document.querySelectorAll(".btn").length;
-
 for (var i = 0; i < numberOfButtons; i++) {
   document
     .querySelectorAll(".btn")
@@ -148,3 +147,15 @@ for (var i = 0; i < numberOfButtons; i++) {
       this.classList.remove("btnHighlight");
     });
 }
+
+const cvDropdownBTN = document.getElementById("cv-btn");
+const cvDropdownDiv = document.getElementById("cv-dropdown");
+cvDropdownBTN.addEventListener("click", () => {
+  cvDropdownDiv.classList.toggle("show");
+});
+cvDropdownDiv.addEventListener("mouseover", () => {
+  cvDropdownDiv.classList.add("show");
+});
+cvDropdownDiv.addEventListener("mouseout", () => {
+  cvDropdownDiv.classList.remove("show");
+});

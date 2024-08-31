@@ -34,13 +34,6 @@ p {
   text-transform: uppercase;
   background-color: transparent;
 }
-.btnHighlight {
-  color: #ffd53f !important;
-  background-color: #6b6b6bbe !important;
-  padding: 4px 8px;
-  border-radius: 50px;
-  text-shadow: 0px 0px 4px #ff3a00;
-}
 .header {
   background-image: url("./assets/images/Background/hero_background_dark.png");
   display: flex;
@@ -109,30 +102,65 @@ p {
   font-size: 20px;
   text-align: start;
 }
-.skills {
+.my-skills {
   margin: 0 auto;
   padding: 10px 0px;
   display: grid;
-  grid-template: 1fr 1fr/1fr 1fr;
+  grid-template: auto/1fr 1fr 1fr 1fr;
   gap: 5px;
   justify-items: center;
   text-align: center;
 }
-.skills > a {
-  grid-area: 4/1/5/3;
-  width: 95%;
+.my-skills > div > h4 {
+  color: #d4dbff;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
 }
-.skills > .logo {
+.my-skills > div > .logo {
   width: 50px;
   height: 50px;
-  margin: 5px;
+  margin: 6px;
+  margin-top: 2px;
+  position: relative;
 }
-.hero > div > .skills > a > .btn {
-  background-color: white;
-  /* width: 30%; */
-  margin: 10px auto;
-  border: 2px solid black;
+.my-skills > .cv-div {
+  grid-area: 3/2/4/4;
+  width: 90%;
+}
+.my-skills > .cv-div > .btn {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+.my-skills > .cv-div > #cv-dropdown {
+  background-color: #d4dbff1f;
+  margin: 6px;
+  padding: 4px;
+  box-shadow: 0px 0px 4px 1px;
+  display: none;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+.my-skills > .cv-div > #cv-dropdown > a {
+  color: #daa000;
+  margin: 4px;
+  padding: 6px;
+  display: flex;
+  gap: 20px;
+  text-decoration: none;
+}
+.my-skills > .cv-div > #cv-dropdown > a > p {
+  color: #daa000;
+  padding: 0;
+  word-spacing: 12px;
   font-weight: 600;
+}
+.my-skills > .cv-div > #cv-dropdown > a:hover {
+  background-color: #daa000;
+  color: white;
+}
+.my-skills > .cv-div > #cv-dropdown > a:hover > p {
+  color: white;
 }
 .showcaseContainer {
   width: 100%;
@@ -229,7 +257,6 @@ p {
   left: 150px;
   font-size: 18px;
 }
-
 .footer {
   background-image: url("./assets/images/Background/hero_background.png");
   color: #daa00091;
@@ -250,7 +277,6 @@ p {
   width: 100%;
   padding: 0;
 }
-
 @media (max-width: 850px) {
   .header {
     height: 200px;
@@ -361,4 +387,14 @@ p {
   .about > h2 {
     margin-top: 10px;
   }
+}
+.show {
+  display: block !important;
+}
+.btnHighlight {
+  color: #ffd53f !important;
+  background-color: #6b6b6bbe !important;
+  padding: 4px 8px;
+  border-radius: 50px;
+  text-shadow: 0px 0px 4px #ff3a00;
 }

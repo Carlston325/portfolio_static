@@ -214,9 +214,9 @@
             </div>
 
             <div class="cv-div">
-              <button class="btn" id="cv-btn">CV Link</button>
+              <button class="btn" id="cv-btn">My CV</button>
               <div id="cv-dropdown">
-                <a href="./assets/files/Carlston Rebelo.pdf">
+                <button id="cv-preview" class="cv-more-options">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -232,9 +232,14 @@
                       d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"
                     />
                   </svg>
-                  <p>Preview</p>
-                </a>
-                <a href="./assets/files/Carlston Rebelo.pdf">
+                  <p>Preview CV</p>
+                </button>
+                <a
+                  id="cv-download"
+                  class="cv-more-options"
+                  href="./assets/files/Carlston Rebelo.pdf"
+                  download="Carlston Rebelos CV.pdf"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -250,8 +255,15 @@
                       d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z"
                     />
                   </svg>
-                  <p>Download</p>
+                  <p>Download CV</p>
                 </a>
+              </div>
+              <div id="preview-file-div">
+                <iframe
+                  id="cv-file"
+                  src="./assets/files/Carlston Rebelo.pdf"
+                ></iframe>
+                <button class="btn" id="close-preview">X</button>
               </div>
             </div>
 

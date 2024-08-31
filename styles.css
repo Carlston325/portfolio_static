@@ -135,32 +135,60 @@ p {
 }
 .my-skills > .cv-div > #cv-dropdown {
   background-color: #d4dbff1f;
+  width: max-content;
   margin: 6px;
   padding: 4px;
   box-shadow: 0px 0px 4px 1px;
   display: none;
-  z-index: 1000; /* Ensure it appears above other content */
 }
-.my-skills > .cv-div > #cv-dropdown > a {
+.my-skills > .cv-div > #cv-dropdown > .cv-more-options {
+  background-color: transparent;
   color: #daa000;
   margin: 4px;
   padding: 6px;
+  border: none !important;
   display: flex;
+  align-items: center;
   gap: 20px;
+  font-size: 14px;
   text-decoration: none;
 }
-.my-skills > .cv-div > #cv-dropdown > a > p {
+.my-skills > .cv-div > #cv-dropdown > .cv-more-options > p {
   color: #daa000;
   padding: 0;
   word-spacing: 12px;
   font-weight: 600;
 }
-.my-skills > .cv-div > #cv-dropdown > a:hover {
+.my-skills > .cv-div > #cv-dropdown > .cv-more-options:hover {
   background-color: #daa000;
   color: white;
 }
-.my-skills > .cv-div > #cv-dropdown > a:hover > p {
+.my-skills > .cv-div > #cv-dropdown > .cv-more-options:hover > p {
   color: white;
+}
+#preview-file-div {
+  display: none;
+  width: 100%;
+  position: absolute;
+  left: 2%;
+  top: 20%;
+}
+#preview-file-div > iframe {
+  width: 70%;
+  height: 60vh;
+}
+#close-preview {
+  background-color: #ecad00;
+  color: white;
+  width: 2%;
+  box-shadow: 0px 1px 4px 0px #daa000;
+  font-weight: 900;
+}
+.display-preview {
+  display: flex !important;
+  gap: 6px;
+  align-items: flex-start;
+  justify-content: center;
 }
 .showcaseContainer {
   width: 100%;

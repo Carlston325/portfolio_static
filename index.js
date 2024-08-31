@@ -159,3 +159,17 @@ cvDropdownDiv.addEventListener("mouseover", () => {
 cvDropdownDiv.addEventListener("mouseout", () => {
   cvDropdownDiv.classList.remove("show");
 });
+
+const cvPreviewBTN = document.getElementById("cv-preview");
+
+const previewFileDiv = document.getElementById("preview-file-div");
+const cvPreviewFrame = document.getElementById("cv-file");
+const closePreview = document.getElementById("close-preview");
+
+cvPreviewBTN.addEventListener("click", function () {
+  // previewFileDiv.classList.add("show");
+  previewFileDiv.classList.add("display-preview");
+});
+closePreview.addEventListener("click", function () {
+  previewFileDiv.classList.remove("display-preview");
+});

@@ -138,7 +138,6 @@ for (var i = 0; i < numberOfButtons; i++) {
     .querySelectorAll(".btn")
     [i].addEventListener("mouseover", function () {
       this.classList.add("btnHighlight");
-      console.log(this);
     });
 
   document
@@ -173,3 +172,21 @@ cvPreviewBTN.addEventListener("click", function () {
 closePreview.addEventListener("click", function () {
   previewFileDiv.classList.remove("display-preview");
 });
+
+const profileImage = document.getElementById("profile-image");
+const profileImageSources = [
+  "./assets/images/Profile/carlston_1.png",
+  "./assets/images/Profile/carlston_2.png",
+  "./assets/images/Profile/carlston_3.png",
+  "./assets/images/Profile/carlston_5.png",
+];
+
+let currentIndex = 0;
+
+setInterval(() => {
+  // Increment index and reset if it exceeds the array length
+  currentIndex = (currentIndex + 1) % profileImageSources.length;
+
+  // Update the image source
+  profileImage.src = profileImageSources[currentIndex];
+}, 5000);

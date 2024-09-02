@@ -30,7 +30,8 @@ p {
 .btn {
   width: inherit;
   padding: 4px 8px;
-  font-family: "Aclonica", sans-serif;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 600;
   text-transform: uppercase;
   background-color: transparent;
 }
@@ -128,10 +129,15 @@ p {
   width: 90%;
 }
 .my-skills > .cv-div > .btn {
-  padding: 10px;
   background-color: #007bff;
   color: white;
+  padding: 10px;
+  box-shadow: 3px 3px 0px 1px black;
+  font-size: 20px;
   cursor: pointer;
+}
+.my-skills > .cv-div > .btn:hover {
+  box-shadow: 1px 1px 2px 0px black;
 }
 .my-skills > .cv-div > #cv-dropdown {
   background-color: #d4dbff1f;
@@ -498,6 +504,10 @@ p {
   color: #ffd53f !important;
   background-color: #6b6b6bbe !important;
   padding: 4px 8px;
-  border-radius: 50px;
+  /* border-radius: 50px; */
   text-shadow: 0px 0px 4px #ff3a00;
+}
+.btnHighlight:active {
+  color: #ff0000 !important;
+  background-color: #4b4b4bbe !important;
 }

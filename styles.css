@@ -95,7 +95,6 @@ p {
   align-self: self-start;
 }
 .hero > div > img {
-  width: 300px;
   border-radius: 50%;
 }
 .hero > div > h2 {

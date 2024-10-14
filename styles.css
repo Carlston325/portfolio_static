@@ -39,7 +39,7 @@ p {
   background-image: url("./assets/images/Background/hero_background_dark.png");
   display: flex;
   height: 60px;
-  align-items: start;
+  align-items: center;
 }
 .header-card {
   width: inherit;
@@ -58,7 +58,7 @@ p {
   font-weight: 100;
   font-family: "Sono", sans-serif;
   font-variant: small-caps;
-  font-size: 25px;
+  font-size: 20px;
   text-align: start;
 }
 .header-card > a .btn {
@@ -68,6 +68,36 @@ p {
   background-color: #ffeba200;
   border: 0;
   font-weight: 700;
+  text-transform: capitalize;
+  font-family: "Sono", sans-serif;
+}
+.individual-link {
+  display: block;
+}
+.header-dropdown {
+  color: white;
+  display: none;
+}
+.dropdown-list {
+  margin: 5px;
+  padding: 10px 5px;
+  display: none;
+  background-color: rgb(211, 250, 255);
+  position: absolute;
+  top: 60px;
+  right: 35px;
+  text-align: start;
+}
+.dropdown-list-item:hover {
+  background-color: #4b4b4bbe;
+}
+.dropdown-list-item > a > .btn {
+  color: #daa000;
+  padding: 4px 8px;
+  font-size: 14px;
+  background-color: #ffeba200;
+  border: 0;
+  font-weight: 900;
   text-transform: capitalize;
   font-family: "Sono", sans-serif;
 }
@@ -86,7 +116,7 @@ p {
   padding: 10px;
   font-weight: 400;
   font-family: "Aclonica", sans-serif;
-  font-size: 60px;
+  font-size: 90px;
   font-variant: small-caps;
 }
 .hero > div {
@@ -368,8 +398,7 @@ p {
 }
 @media (max-width: 850px) {
   .header {
-    height: 200px;
-    flex-direction: column;
+    height: 90px;
     align-items: center;
     position: relative;
   }
@@ -377,7 +406,6 @@ p {
     width: 90%;
     margin: 0 10px;
     text-align: center;
-    flex: 1;
     padding: 5px 0;
   }
   .header-card > h3 {
@@ -386,6 +414,13 @@ p {
   }
   .header-card > a .btn {
     font-weight: 600;
+  }
+  .individual-link {
+    display: none;
+  }
+  .header-dropdown {
+    color: white;
+    display: block;
   }
   .showcase-img {
     width: 400px;

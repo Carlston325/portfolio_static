@@ -190,3 +190,34 @@ setInterval(() => {
   // Update the image source
   profileImage.src = profileImageSources[currentIndex];
 }, 5000);
+
+const hamburgerSVG = document.querySelector(".hamburger");
+const dropdownList = document.querySelector(".dropdown-list");
+
+hamburgerSVG.addEventListener("mouseenter", () => {
+  dropdownList.style.display = "block";
+  console.log("mouse went ON (hamburger)");
+});
+
+dropdownList.addEventListener("mouseenter", () => {
+  dropdownList.style.display = "block";
+  console.log("mouse went ON (dropdown)");
+});
+
+hamburgerSVG.addEventListener("mouseleave", () => {
+  setTimeout(() => {
+    if (!dropdownList.matches(":hover")) {
+      dropdownList.style.display = "none";
+      console.log("mouse went OFF (hamburger)");
+    }
+  }, 100); // Small delay to allow hovering over dropdown before hiding it
+});
+
+dropdownList.addEventListener("mouseleave", () => {
+  setTimeout(() => {
+    if (!dropdownList.matches(":hover")) {
+      dropdownList.style.display = "none";
+      console.log("mouse went OFF (dropdown)");
+    }
+  }, 100); // Delay allows for smoother transitions
+});

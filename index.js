@@ -214,7 +214,7 @@ setInterval(() => {
 
   // Update the image source
   profileImage.src = profileImageSources[currentIndex];
-}, 5000);
+}, 8000);
 
 const hamburgerSVG = document.querySelector(".hamburger");
 const dropdownList = document.querySelector(".dropdown-list");

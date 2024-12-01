@@ -22,7 +22,7 @@ h2 {
   font-size: 30px;
 }
 p {
-  color: #b18a00;
+  color: #d49e11;
   margin: 0;
   padding-top: 20px;
   font-family: "Sono", sans-serif;
@@ -278,15 +278,22 @@ p {
   font-size: 20px;
   font-weight: 600;
   text-align: start;
-  text-shadow: 1px 1px 0px #000000b0;
+  text-shadow: 1px 1px 0px #ffe79eb0;
 }
-.showcase-card > div > a .btn {
+.showcase-card > div > .btn {
+  background-color: rgb(255, 217, 147);
   width: inherit;
   margin: 10px 0;
-  padding: 4px 8px;
+  padding: 8px 14px;
+  border: 0px;
+  border-radius: 25px 15px;
   font-family: "Aclonica", sans-serif;
   text-transform: uppercase;
-  background-color: white;
+  text-decoration: none;
+}
+.showcase-card > div > .btn a {
+  color: #000000;
+  text-decoration: none;
 }
 .about {
   width: 100%;
@@ -536,9 +543,10 @@ p {
 }
 .btnHighlight {
   color: #ffd53f !important;
-  background-color: #6b6b6bbe !important;
+  background-color: #ffababbe !important;
   padding: 4px 8px;
-  /* border-radius: 50px; */
+  border: 1px solid black !important;
+  border-radius: 15px 25px !important;
   text-shadow: 0px 0px 4px #ff3a00;
 }
 .btnHighlight:active {

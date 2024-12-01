@@ -1,5 +1,13 @@
 const showcases = [
   {
+    id: 10,
+    title: "Journey of Results",
+    description:
+      "I worked for Journey of Results Ltd to build their consulting firm website, I was part of a team and my task was to add functionality to the website. I also learnt SEO & some web design through this experience.",
+    image: "./assets/images/jor_website.png",
+    websiteLink: "https://oli7760.wixstudio.com/journeyofresults",
+  },
+  {
     id: 9,
     title: "Carlston's Coffee",
     description: "",
@@ -80,6 +88,8 @@ const showcases = [
 ];
 
 const mapShowcases = showcases.map((showcase) => {
+  console.log(showcase.githubLink, showcase.websiteLink);
+
   if (showcase.githubLink === undefined && showcase.websiteLink === undefined) {
     return `
     <div class="showcase-card">
@@ -89,9 +99,9 @@ const mapShowcases = showcases.map((showcase) => {
         <p>${showcase.description}</p>
       </div>
       <div> 
-        <a href=${showcase.link}>
-          <button class="btn">Visit</button>
-        </a>
+        <button class="btn">
+          <a href=${showcase.link}>Visit</a>
+        </button>
       </div>
     </div>
   `;
@@ -103,10 +113,25 @@ const mapShowcases = showcases.map((showcase) => {
         <h2>${showcase.title}</h2>
         <p>${showcase.description}</p>
       </div>
+      <div>
+        <button class="btn">
+          <a href=${showcase.githubLink}>Github</a>
+        </button>
+      </div>
+    </div>
+  `;
+  } else if (showcase.githubLink === undefined) {
+    return `
+    <div class="showcase-card">
+      <img class="showcase-img" src=${showcase.image} />
+      <div>
+        <h2>${showcase.title}</h2>
+        <p>${showcase.description}</p>
+      </div>
        <div>
-        <a href=${showcase.githubLink}>
-          <button class="btn">Github</button>
-        </a>
+        <button class="btn">
+          <a href=${showcase.websiteLink}>Live</a>
+        </button>
       </div>
     </div>
   `;
@@ -119,12 +144,12 @@ const mapShowcases = showcases.map((showcase) => {
         <p>${showcase.description}</p>
       </div>
       <div>
-        <a href=${showcase.websiteLink}>
-          <button class="btn">Live</button>
-        </a>
-        <a href=${showcase.githubLink}>
-          <button class="btn">Github</button>
-        </a>
+        <button class="btn">
+          <a href=${showcase.websiteLink}>Live</a>
+        </button>
+        <button class="btn">
+          <a href=${showcase.githubLink}>Github</a>
+        </button>
       </div>
     </div>
   `;

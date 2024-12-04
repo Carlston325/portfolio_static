@@ -88,9 +88,9 @@ p {
   right: 35px;
   text-align: start;
 }
-.dropdown-list-item:hover {
+/* .dropdown-list-item:hover {
   background-color: #4b4b4bbe;
-}
+} */
 .dropdown-list-item > a > .btn {
   color: #daa000;
   padding: 4px 8px;
@@ -179,7 +179,7 @@ p {
 .my-skills > .cv-div > #cv-dropdown > .cv-more-options {
   background-color: transparent;
   color: #daa000;
-  margin: 4px;
+  width: 100%;
   padding: 6px;
   border: none !important;
   display: flex;
@@ -188,7 +188,7 @@ p {
   font-size: 14px;
   text-decoration: none;
 }
-.my-skills > .cv-div > #cv-dropdown > .cv-more-options > p {
+.my-skills > .cv-div > #cv-dropdown > .cv-more-options p {
   color: #daa000;
   padding: 0;
   word-spacing: 12px;
@@ -198,7 +198,7 @@ p {
   background-color: #daa000;
   color: white;
 }
-.my-skills > .cv-div > #cv-dropdown > .cv-more-options:hover > p {
+.my-skills > .cv-div > #cv-dropdown > .cv-more-options:hover p {
   color: white;
 }
 #preview-file-div {

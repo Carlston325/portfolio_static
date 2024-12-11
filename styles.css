@@ -1,7 +1,6 @@
 body {
-  background-color: #d4dbff;
+  background-color: #0c1623;
   background-image: url("https://www.transparenttextures.com/patterns/diagonales-decalees.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   width: 100%;
   margin: 0;
   text-align: start;
@@ -12,11 +11,11 @@ body {
   flex-direction: column;
 }
 .card {
-  width: 100%;
+  width: auto;
 }
 h2 {
   /* width: 65%; */
-  color: #000000;
+  color: #dfdfdf;
   margin: 0;
   font-family: "Aclonica", sans-serif;
   font-size: 30px;
@@ -36,6 +35,8 @@ p {
   background-color: transparent;
 }
 .header {
+  background-color: #007bff;
+  background-blend-mode: multiply;
   background-image: url("./assets/images/Background/hero_background_dark.png");
   display: flex;
   height: 60px;
@@ -102,30 +103,47 @@ p {
   font-family: "Sono", sans-serif;
 }
 .hero {
+  background-color: #001aff;
+  background-blend-mode: multiply;
   background-image: url("./assets/images/Background/hero_background.png");
-  display: grid;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: start;
+  /* display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   align-items: center;
-  text-align: center;
+  text-align: center; */
 }
 .hero > h1 {
   grid-area: 1/1/2/3;
   color: #fff;
-  margin: 10px auto;
-  padding: 10px;
+  width: 100%;
+  margin: 20px;
   font-weight: 400;
   font-family: "Aclonica", sans-serif;
   font-size: 90px;
   font-variant: small-caps;
 }
 .hero > div {
-  /* width: 90%; */
-  margin: 20px auto;
-  align-self: self-start;
+  width: 100%;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
 }
-.hero > div > img {
-  border-radius: 50%;
+.hero > div > div {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.hero > div > .profile-image-container > img {
+  margin: 0 auto;
+  border-radius: 30% 60% 20% 60%;
 }
 .hero > div > h2 {
   color: #daa000;
@@ -133,12 +151,12 @@ p {
   text-align: start;
 }
 .my-skills {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 10px 0px;
   display: grid;
   grid-template: auto/1fr 1fr 1fr 1fr;
-  gap: 5px;
-  justify-items: center;
+  gap: 20px;
+  justify-items: self-start;
   text-align: center;
 }
 .my-skills > div > h4 {
@@ -154,8 +172,8 @@ p {
   position: relative;
 }
 .my-skills > .cv-div {
-  grid-area: 3/2/4/4;
-  width: 90%;
+  grid-area: 3/1/4/2;
+  width: 100%;
 }
 .my-skills > .cv-div > .btn {
   background-color: #007bff;
@@ -249,7 +267,7 @@ p {
   text-align: center;
 }
 .showcase-card {
-  background-color: #f7fdff;
+  background-color: rgb(255, 255, 255);
   background-image: url("https://www.transparenttextures.com/patterns/grid-me.png");
   width: 80%;
   margin: 10px;
@@ -330,6 +348,8 @@ p {
   font-size: 18px;
 }
 .footer {
+  background-color: #007bff;
+  background-blend-mode: multiply;
   background-image: url("./assets/images/Background/hero_background.png");
   color: #daa00091;
   margin-top: 40px;

@@ -1,5 +1,5 @@
 body {
-  background-color: #0c1623;
+  background-color: #03001d;
   background-image: url("https://www.transparenttextures.com/patterns/diagonales-decalees.png");
   width: 100%;
   margin: 0;
@@ -14,11 +14,16 @@ body {
   width: auto;
 }
 h2 {
-  /* width: 65%; */
-  color: #dfdfdf;
-  margin: 0;
+  /* color: #dea32c;
+  margin: 0; */
   font-family: "Aclonica", sans-serif;
   font-size: 30px;
+
+  color: #dea32c;
+  width: 100%;
+  font-size: 24px;
+  text-align: start;
+  text-shadow: 2px 1px 2px #000000;
 }
 p {
   color: #d49e11;
@@ -38,8 +43,9 @@ p {
   background-color: #007bff;
   background-blend-mode: multiply;
   background-image: url("./assets/images/Background/hero_background_dark.png");
+  height: 80px;
+  padding: 0% 4%;
   display: flex;
-  height: 60px;
   align-items: center;
 }
 .header-card {
@@ -89,9 +95,6 @@ p {
   right: 35px;
   text-align: start;
 }
-/* .dropdown-list-item:hover {
-  background-color: #4b4b4bbe;
-} */
 .dropdown-list-item > a > .btn {
   color: #daa000;
   padding: 4px 8px;
@@ -111,11 +114,6 @@ p {
   flex-direction: column;
   flex-wrap: wrap;
   align-content: start;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-  align-items: center;
-  text-align: center; */
 }
 .hero > h1 {
   grid-area: 1/1/2/3;
@@ -151,7 +149,6 @@ p {
   text-align: start;
 }
 .my-skills {
-  /* margin: 0 auto; */
   padding: 10px 0px;
   display: grid;
   grid-template: auto/1fr 1fr 1fr 1fr;
@@ -246,44 +243,37 @@ p {
   justify-content: center;
 }
 .showcaseContainer {
-  width: 100%;
-  margin: 200px auto;
-  margin-bottom: 60px;
+  width: 90%;
+  margin: 2% 5%;
+  padding-top: 8%;
 }
 .showcaseContainer > h2 {
-  margin: 4px auto;
-  padding: 0 10px;
+  width: 100%;
+  margin-top: 5%;
   font-size: 80px;
   text-align: center;
+  text-shadow: 2px 1px 2px #ffffff;
 }
 .showcase-grid {
-  margin: 60px auto;
-  padding: 10px;
+  width: 100%;
+  margin-top: 5%;
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  gap: 10px;
+  gap: 25px;
   text-align: center;
 }
 .showcase-card {
   background-color: rgb(255, 255, 255);
   background-image: url("https://www.transparenttextures.com/patterns/grid-me.png");
-  width: 80%;
-  margin: 10px;
-  padding: 2%;
+  width: 90%;
+  padding: 5%;
   box-shadow: 0.5px 0.5px 6px 1px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
-.showcase-card > div > h2 {
-  color: #000000;
-  width: 100%;
-  font-size: 24px;
-  text-align: start;
-  text-shadow: 2px 1px 2px #ffbc3db0;
 }
 .showcase-img {
   width: 510px;
@@ -316,7 +306,9 @@ p {
   text-decoration: none;
 }
 .about {
-  width: 100%;
+  background-color: white;
+  width: 90%;
+  margin: 2% 5%;
   padding-top: 30px;
   text-align: start;
 }
@@ -352,7 +344,8 @@ p {
   background-blend-mode: multiply;
   background-image: url("./assets/images/Background/hero_background.png");
   color: #daa00091;
-  margin-top: 40px;
+  padding: 10px;
+  padding-top: 40px;
   height: 50px;
   display: inline-flex;
   justify-content: space-evenly;

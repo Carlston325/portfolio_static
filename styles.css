@@ -115,7 +115,7 @@ p {
   flex-wrap: wrap;
   align-content: start;
 }
-.hero > h1 {
+.hero h1 {
   grid-area: 1/1/2/3;
   color: #fff;
   width: 100%;
@@ -139,9 +139,20 @@ p {
   display: flex;
   flex-direction: column;
 }
-.hero > div > .profile-image-container > img {
-  margin: 0 auto;
+#profile-image-large-screen {
+  display: block;
+  width: 50%;
+  text-align: center;
+}
+#profile-image-small-screen {
+  display: none;
+}
+.profile-image-container > img {
+  margin: 0;
   border-radius: 30% 60% 20% 60%;
+}
+.small-profile-image {
+  display: none;
 }
 .hero > div > h2 {
   color: #daa000;
@@ -153,20 +164,21 @@ p {
   display: grid;
   grid-template: auto/1fr 1fr 1fr 1fr;
   gap: 20px;
-  justify-items: self-start;
-  text-align: center;
+}
+.my-skills > div {
+  display: flex;
+  flex-direction: column;
 }
 .my-skills > div > h4 {
   color: #d4dbff;
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  text-align: center;
 }
 .my-skills > div > .logo {
   width: 50px;
   height: 50px;
-  margin: 6px;
-  margin-top: 2px;
-  position: relative;
+  margin: 0 auto;
 }
 .my-skills > .cv-div {
   grid-area: 3/1/4/2;
@@ -452,8 +464,6 @@ p {
     display: grid;
     grid-template: auto / 1fr 1fr 1fr;
     gap: 20px;
-    justify-items: self-start;
-    text-align: center;
   }
   .my-skills > .cv-div {
     grid-area: 4 / 1 / 5 / 4;
@@ -495,9 +505,9 @@ p {
   }
 }
 @media (max-width: 730px) {
-  .hero > div > .profile-image-container > img {
-    width: 250px;
-    height: 250px;
+  .profile-image-container > img {
+    width: 200px;
+    height: 200px;
     border-radius: 25%;
   }
   .showcase-img {
@@ -511,24 +521,18 @@ p {
     gap: 20px;
   }
   .hero > div {
-    width: 100%;
     margin: 0;
-    padding: 10px;
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
+    align-items: center;
   }
-  .hero > h1 {
+  .hero h1 {
     margin: 0;
+    font-size: 60px;
   }
-  .hero > div > .profile-image-container {
+  #profile-image-large-screen {
     display: none;
   }
-}
-@media (max-width: 560px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
+  #profile-image-small-screen {
+    display: block;
   }
 }
 @media (max-width: 495px) {
@@ -541,6 +545,18 @@ p {
   .showcase-card > div > p {
     font-size: 14px;
     text-shadow: 0 0 1px;
+  }
+}
+@media (max-width: 540px) {
+  .hero > div {
+    flex-direction: column;
+    padding: 0;
+  }
+  .hero h1 {
+    font-size: 50px;
+  }
+  .my-skills {
+    gap: 10px;
   }
 }
 @media (max-width: 360px) {

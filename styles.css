@@ -86,16 +86,23 @@ p {
   display: none;
 }
 .dropdown-list {
-  margin: 5px;
-  padding: 10px 5px;
+  width: 100%;
+  height: 100vh;
+  padding: 0 5px;
   display: none;
-  background-color: rgb(211, 250, 255);
+  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
-  top: 60px;
-  right: 35px;
-  text-align: start;
+  top: 0px;
+  right: 0px;
 }
-.dropdown-list-item > a > .btn {
+.dropdown-list > div {
+  width: 40%;
+  height: 100vh;
+  margin-left: 60%;
+  background-color: rgb(255, 255, 255);
+  text-align: end;
+}
+.dropdown-list-item > a > .btn2 {
   color: #daa000;
   padding: 4px 8px;
   font-size: 14px;
@@ -104,6 +111,20 @@ p {
   font-weight: 900;
   text-transform: capitalize;
   font-family: "Sono", sans-serif;
+  font-size: 30px;
+}
+.dropdown-list-item > a > .btn2:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+.dropdown-list-item > a > .close-menu-btn {
+  color: red !important;
+  text-decoration: none !important;
+  text-shadow: 0px 0px 1px black !important;
+}
+.dropdown-list-item > a > .close-menu-btn:hover {
+  color: rgb(199, 0, 0) !important;
+  text-shadow: 0px 0px 2px red !important;
 }
 .hero {
   background-color: #001aff;

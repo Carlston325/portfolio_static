@@ -16,27 +16,13 @@ for (var i = 0; i < numberOfButtons; i++) {
 // Hamburger Menu Dropdown
 const hamburgerSVG = document.querySelector(".hamburger");
 const dropdownList = document.querySelector(".dropdown-list");
+const closeMenuBtn = document.querySelector(".close-menu-btn");
 
-hamburgerSVG.addEventListener("mouseenter", () => {
+hamburgerSVG.addEventListener("click", () => {
   dropdownList.style.display = "block";
 });
-hamburgerSVG.addEventListener("mouseleave", () => {
-  setTimeout(() => {
-    if (!dropdownList.matches(":hover")) {
-      dropdownList.style.display = "none";
-    }
-  }, 100); // Small delay to allow hovering over dropdown before hiding it
-});
-
-dropdownList.addEventListener("mouseenter", () => {
-  dropdownList.style.display = "block";
-});
-dropdownList.addEventListener("mouseleave", () => {
-  setTimeout(() => {
-    if (!dropdownList.matches(":hover")) {
-      dropdownList.style.display = "none";
-    }
-  }, 100); // Delay allows for smoother transitions
+closeMenuBtn.addEventListener("click", () => {
+  dropdownList.style.display = "none";
 });
 // CV Preview & Download
 const cvDropdownBTN = document.getElementById("cv-btn");

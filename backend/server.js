@@ -12,6 +12,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
+
 app.get("/projects", (req, res) => {
   pool.query("SELECT * FROM web_dev_projects_info", (error, result) => {
     if (error) {

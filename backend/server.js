@@ -2,10 +2,11 @@ import express from "express";
 import pool from "./db.js";
 import cors from "cors";
 import { profileImageSources } from "./db.js";
-const app = express();
-
 import dotenv from "dotenv";
+
 dotenv.config();
+
+const app = express();
 const port = process.env.SERVER_PORT || 5000;
 
 app.use(cors());

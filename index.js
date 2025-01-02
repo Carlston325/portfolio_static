@@ -1,6 +1,6 @@
 window.onload = async function () {
   // Project showcase
-  await fetch("http://127.0.0.1:5000/projects")
+  await fetch("https://backend-fmv0.onrender.com/projects")
     .then(async (response) => {
       const result = await response.json();
 
@@ -78,7 +78,7 @@ window.onload = async function () {
       console.error(`Error: ${error.message}`);
     });
   // Profile image carousel
-  await fetch("http://127.0.0.1:5000/profile_image")
+  await fetch("https://backend-fmv0.onrender.com/profile_image")
     .then((response) => response.json())
     .then((result) => {
       const profileImagesArray = result;

@@ -252,13 +252,13 @@ p {
 #preview-file-div {
   display: none;
   width: 100%;
-  position: absolute;
-  left: 2%;
-  top: 20%;
+  position: fixed;
+  left: 0%;
+  top: 50px;
 }
 #preview-file-div > iframe {
   width: 70%;
-  height: 60vh;
+  height: 90vh;
 }
 #close-preview {
   background-color: #ffffff;

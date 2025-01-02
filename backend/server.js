@@ -21,8 +21,6 @@ app.get("/projects", async (req, res) => {
 app.get("/profile_image", (req, res) => {
   try {
     const result = profileImageSources;
-    console.log(result);
-
     res.json(result);
   } catch (err) {
     console.error(err.message);

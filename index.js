@@ -102,7 +102,6 @@ window.onload = async function () {
     });
   //Button hover effect
   const numberOfButtons = document.querySelectorAll(".btn").length;
-  console.log(numberOfButtons);
 
   for (let i = 0; i < numberOfButtons; i++) {
     document

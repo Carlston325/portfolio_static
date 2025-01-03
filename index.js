@@ -1,10 +1,11 @@
 window.onload = async function () {
   // Project showcase
   await fetch("https://backend-fmv0.onrender.com/projects")
+    //Load Projects and pass images
     .then(async (response) => {
-      const result = await response.json();
+      let { profileImageSources, projects } = await response.json();
 
-      const mapShowcases = result.map((showcase) => {
+      const mapShowcases = projects.map((showcase) => {
         if (showcase.github_link === null && showcase.website_link === null) {
           return `
           <div class="showcase-card">
@@ -73,15 +74,11 @@ window.onload = async function () {
       mapShowcases.reverse();
       document.getElementById("showcase-container").innerHTML =
         mapShowcases.join("");
-    })
-    .catch((error) => {
-      console.error(`Error: ${error.message}`);
-    });
-  // Profile image carousel
-  await fetch("https://backend-fmv0.onrender.com/profile_images")
-    .then((response) => response.json())
-    .then((result) => {
-      const profileImagesArray = result;
+
+      return profileImageSources;
+    }) // Load Images in Image Carousel
+    .then((profileImageSources) => {
+      const profileImagesArray = profileImageSources;
       const profileImage = document.getElementById("profile-image");
       const profileImageMobile = document.getElementById(
         "profile-image-mobile"

@@ -1,12 +1,13 @@
-// Project showcase
-fetch("https://backend-fmv0.onrender.com/projects")
-  //Load Projects and pass images
-  .then(async (response) => {
-    let { profileImageSources, projects } = await response.json();
+window.onload = async function () {
+  // Project showcase
+  await fetch("https://backend-fmv0.onrender.com/projects")
+    //Load Projects and pass images
+    .then(async (response) => {
+      let { profileImageSources, projects } = await response.json();
 
-    const mapShowcases = projects.map((showcase) => {
-      if (showcase.github_link === null && showcase.website_link === null) {
-        return `
+      const mapShowcases = projects.map((showcase) => {
+        if (showcase.github_link === null && showcase.website_link === null) {
+          return `
         <div class="showcase-card">
           <img class="showcase-img" src=${showcase.thumbnail} />
           <div>
@@ -20,8 +21,8 @@ fetch("https://backend-fmv0.onrender.com/projects")
           </div>
         </div>
       `;
-      } else if (showcase.website_link === null) {
-        return `
+        } else if (showcase.website_link === null) {
+          return `
         <div class="showcase-card">
           <img class="showcase-img" src=${showcase.thumbnail} />
           <div>
@@ -35,8 +36,8 @@ fetch("https://backend-fmv0.onrender.com/projects")
           </div>
         </div>
       `;
-      } else if (showcase.github_link === null) {
-        return `
+        } else if (showcase.github_link === null) {
+          return `
         <div class="showcase-card">
           <img class="showcase-img" src=${showcase.thumbnail} />
           <div>
@@ -50,8 +51,8 @@ fetch("https://backend-fmv0.onrender.com/projects")
           </div>
         </div>
       `;
-      } else {
-        return `
+        } else {
+          return `
         <div class="showcase-card">
           <img class="showcase-img" src=${showcase.thumbnail} />
           <div>
@@ -68,34 +69,36 @@ fetch("https://backend-fmv0.onrender.com/projects")
           </div>
         </div>
       `;
-      }
+        }
+      });
+      mapShowcases.reverse();
+      document.getElementById("showcase-container").innerHTML =
+        mapShowcases.join("");
+
+      return profileImageSources;
+    })
+    .then((profileImageSources) => {
+      // Load Images in Image Carousel
+      const profileImagesArray = profileImageSources;
+      const profileImage = document.getElementById("profile-image");
+      const profileImageMobile = document.getElementById(
+        "profile-image-mobile"
+      );
+
+      let currentIndex = 0;
+      setInterval(() => {
+        // Increment index and reset if it exceeds the array length
+        currentIndex = (currentIndex + 1) % profileImagesArray.length;
+
+        // Update the image source
+        profileImage.src = profileImagesArray[currentIndex];
+        profileImageMobile.src = profileImagesArray[currentIndex];
+      }, 6000);
+    })
+    .catch((error) => {
+      console.error(`Error: ${error.message}`);
     });
-    mapShowcases.reverse();
-    document.getElementById("showcase-container").innerHTML =
-      mapShowcases.join("");
 
-    return profileImageSources;
-  })
-  .then((profileImageSources) => {
-    // Load Images in Image Carousel
-    const profileImagesArray = profileImageSources;
-    const profileImage = document.getElementById("profile-image");
-    const profileImageMobile = document.getElementById("profile-image-mobile");
-
-    let currentIndex = 0;
-    setInterval(() => {
-      // Increment index and reset if it exceeds the array length
-      currentIndex = (currentIndex + 1) % profileImagesArray.length;
-
-      // Update the image source
-      profileImage.src = profileImagesArray[currentIndex];
-      profileImageMobile.src = profileImagesArray[currentIndex];
-    }, 6000);
-  })
-  .catch((error) => {
-    console.error(`Error: ${error.message}`);
-  });
-window.onload = async function () {
   //Button hover effect
   const numberOfButtons = document.querySelectorAll(".btn").length;
 

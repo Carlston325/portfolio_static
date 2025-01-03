@@ -78,7 +78,7 @@ window.onload = async function () {
       console.error(`Error: ${error.message}`);
     });
   // Profile image carousel
-  await fetch("https://backend-fmv0.onrender.com/profile_image")
+  await fetch("https://backend-fmv0.onrender.com/profile_images")
     .then((response) => response.json())
     .then((result) => {
       const profileImagesArray = result;

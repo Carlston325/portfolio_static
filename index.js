@@ -2,9 +2,9 @@
 fetch("https://backend-fmv0.onrender.com/projects")
   // Load Projects and pass images
   .then(async (response) => {
-    let { profileImageSources, projects } = await response.json();
+    const { profileImageSources, projects } = await response.json();
 
-    const createShowcaseCard = (showcase) => {
+    const mapShowcases = projects.map((showcase) => {
       const cardDiv = document.createElement("div");
       cardDiv.className = "showcase-card";
 
@@ -44,7 +44,11 @@ fetch("https://backend-fmv0.onrender.com/projects")
         linkDiv.appendChild(liveBtn);
       }
 
-      if (showcase.other_link && !showcase.github_link && !showcase.website_link) {
+      if (
+        showcase.other_link &&
+        !showcase.github_link &&
+        !showcase.website_link
+      ) {
         const otherBtn = document.createElement("button");
         otherBtn.className = "btn";
         const otherLink = document.createElement("a");
@@ -56,11 +60,11 @@ fetch("https://backend-fmv0.onrender.com/projects")
 
       cardDiv.appendChild(linkDiv);
       return cardDiv.outerHTML;
-    };
+    });
 
-    const mapShowcases = projects.map(createShowcaseCard);
     mapShowcases.reverse();
-    document.getElementById("showcase-container").innerHTML = mapShowcases.join("");
+    document.getElementById("showcase-container").innerHTML =
+      mapShowcases.join("");
 
     return profileImageSources;
   })

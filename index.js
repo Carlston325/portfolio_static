@@ -1,5 +1,5 @@
 // Project showcase
-await fetch("https://backend-fmv0.onrender.com/projects")
+fetch("https://backend-fmv0.onrender.com/projects")
   //Load Projects and pass images
   .then(async (response) => {
     let { profileImageSources, projects } = await response.json();

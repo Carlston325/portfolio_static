@@ -1,102 +1,101 @@
-window.onload = async function () {
-  // Project showcase
-  await fetch("https://backend-fmv0.onrender.com/projects")
-    //Load Projects and pass images
-    .then(async (response) => {
-      let { profileImageSources, projects } = await response.json();
+// Project showcase
+await fetch("https://backend-fmv0.onrender.com/projects")
+  //Load Projects and pass images
+  .then(async (response) => {
+    let { profileImageSources, projects } = await response.json();
 
-      const mapShowcases = projects.map((showcase) => {
-        if (showcase.github_link === null && showcase.website_link === null) {
-          return `
-          <div class="showcase-card">
-            <img class="showcase-img" src=${showcase.thumbnail} />
-            <div>
-              <h2>${showcase.title}</h2>
-              <p>${showcase.descrip}</p>
-            </div>
-            <div>
-              <button class="btn">
-                <a href=${showcase.other_link}>Visit</a>
-              </button>
-            </div>
+    const mapShowcases = projects.map((showcase) => {
+      if (showcase.github_link === null && showcase.website_link === null) {
+        return `
+        <div class="showcase-card">
+          <img class="showcase-img" src=${showcase.thumbnail} />
+          <div>
+            <h2>${showcase.title}</h2>
+            <p>${showcase.descrip}</p>
           </div>
-        `;
-        } else if (showcase.website_link === null) {
-          return `
-          <div class="showcase-card">
-            <img class="showcase-img" src=${showcase.thumbnail} />
-            <div>
-              <h2>${showcase.title}</h2>
-              <p>${showcase.descrip}</p>
-            </div>
-            <div>
-              <button class="btn">
-                <a href=${showcase.github_link}>Github</a>
-              </button>
-            </div>
+          <div>
+            <button class="btn">
+              <a href=${showcase.other_link}>Visit</a>
+            </button>
           </div>
-        `;
-        } else if (showcase.github_link === null) {
-          return `
-          <div class="showcase-card">
-            <img class="showcase-img" src=${showcase.thumbnail} />
-            <div>
-              <h2>${showcase.title}</h2>
-              <p>${showcase.descrip}</p>
-            </div>
-            <div>
-              <button class="btn">
-                <a href=${showcase.website_link}>Live</a>
-              </button>
-            </div>
+        </div>
+      `;
+      } else if (showcase.website_link === null) {
+        return `
+        <div class="showcase-card">
+          <img class="showcase-img" src=${showcase.thumbnail} />
+          <div>
+            <h2>${showcase.title}</h2>
+            <p>${showcase.descrip}</p>
           </div>
-        `;
-        } else {
-          return `
-          <div class="showcase-card">
-            <img class="showcase-img" src=${showcase.thumbnail} />
-            <div>
-              <h2>${showcase.title}</h2>
-              <p>${showcase.descrip}</p>
-            </div>
-            <div>
-              <button class="btn">
-                <a href=${showcase.website_link}>Live</a>
-              </button>
-              <button class="btn">
-                <a href=${showcase.github_link}>Github</a>
-              </button>
-            </div>
+          <div>
+            <button class="btn">
+              <a href=${showcase.github_link}>Github</a>
+            </button>
           </div>
-        `;
-        }
-      });
-      mapShowcases.reverse();
-      document.getElementById("showcase-container").innerHTML =
-        mapShowcases.join("");
-
-      return profileImageSources;
-    }) // Load Images in Image Carousel
-    .then((profileImageSources) => {
-      const profileImagesArray = profileImageSources;
-      const profileImage = document.getElementById("profile-image");
-      const profileImageMobile = document.getElementById(
-        "profile-image-mobile"
-      );
-
-      let currentIndex = 0;
-      setInterval(() => {
-        // Increment index and reset if it exceeds the array length
-        currentIndex = (currentIndex + 1) % profileImagesArray.length;
-
-        // Update the image source
-        profileImage.src = profileImagesArray[currentIndex];
-        profileImageMobile.src = profileImagesArray[currentIndex];
-      }, 6000);
-    })
-    .catch((error) => {
-      console.error(`Error: ${error.message}`);
+        </div>
+      `;
+      } else if (showcase.github_link === null) {
+        return `
+        <div class="showcase-card">
+          <img class="showcase-img" src=${showcase.thumbnail} />
+          <div>
+            <h2>${showcase.title}</h2>
+            <p>${showcase.descrip}</p>
+          </div>
+          <div>
+            <button class="btn">
+              <a href=${showcase.website_link}>Live</a>
+            </button>
+          </div>
+        </div>
+      `;
+      } else {
+        return `
+        <div class="showcase-card">
+          <img class="showcase-img" src=${showcase.thumbnail} />
+          <div>
+            <h2>${showcase.title}</h2>
+            <p>${showcase.descrip}</p>
+          </div>
+          <div>
+            <button class="btn">
+              <a href=${showcase.website_link}>Live</a>
+            </button>
+            <button class="btn">
+              <a href=${showcase.github_link}>Github</a>
+            </button>
+          </div>
+        </div>
+      `;
+      }
     });
+    mapShowcases.reverse();
+    document.getElementById("showcase-container").innerHTML =
+      mapShowcases.join("");
+
+    return profileImageSources;
+  })
+  .then((profileImageSources) => {
+    // Load Images in Image Carousel
+    const profileImagesArray = profileImageSources;
+    const profileImage = document.getElementById("profile-image");
+    const profileImageMobile = document.getElementById("profile-image-mobile");
+
+    let currentIndex = 0;
+    setInterval(() => {
+      // Increment index and reset if it exceeds the array length
+      currentIndex = (currentIndex + 1) % profileImagesArray.length;
+
+      // Update the image source
+      profileImage.src = profileImagesArray[currentIndex];
+      profileImageMobile.src = profileImagesArray[currentIndex];
+    }, 6000);
+  })
+  .catch((error) => {
+    console.error(`Error: ${error.message}`);
+  });
+window.onload = async function () {
   //Button hover effect
   const numberOfButtons = document.querySelectorAll(".btn").length;
 

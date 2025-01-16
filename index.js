@@ -1,105 +1,112 @@
 window.onload = async function () {
-  // Project showcase
-  await fetch("https://backend-fmv0.onrender.com/projects")
-    //Load Projects and pass images
-    .then(async (response) => {
-      let { profileImageSources, projects } = await response.json();
+  try {
+    const response = await fetch("https://backend-fmv0.onrender.com/projects");
+    let { profileImageSources, projects } = await response.json();
 
-      const mapShowcases = projects.map((showcase) => {
-        if (showcase.github_link === null && showcase.website_link === null) {
-          return `
-        <div class="showcase-card">
-          <img class="showcase-img" src=${showcase.thumbnail} />
-          <div>
-            <h2>${showcase.title}</h2>
-            <p>${showcase.descrip}</p>
-          </div>
-          <div>
-            <button class="btn">
-              <a href=${showcase.other_link}>Visit</a>
-            </button>
-          </div>
-        </div>
-      `;
-        } else if (showcase.website_link === null) {
-          return `
-        <div class="showcase-card">
-          <img class="showcase-img" src=${showcase.thumbnail} />
-          <div>
-            <h2>${showcase.title}</h2>
-            <p>${showcase.descrip}</p>
-          </div>
-          <div>
-            <button class="btn">
-              <a href=${showcase.github_link}>Github</a>
-            </button>
-          </div>
-        </div>
-      `;
-        } else if (showcase.github_link === null) {
-          return `
-        <div class="showcase-card">
-          <img class="showcase-img" src=${showcase.thumbnail} />
-          <div>
-            <h2>${showcase.title}</h2>
-            <p>${showcase.descrip}</p>
-          </div>
-          <div>
-            <button class="btn">
-              <a href=${showcase.website_link}>Live</a>
-            </button>
-          </div>
-        </div>
-      `;
-        } else {
-          return `
-        <div class="showcase-card">
-          <img class="showcase-img" src=${showcase.thumbnail} />
-          <div>
-            <h2>${showcase.title}</h2>
-            <p>${showcase.descrip}</p>
-          </div>
-          <div>
-            <button class="btn">
-              <a href=${showcase.website_link}>Live</a>
-            </button>
-            <button class="btn">
-              <a href=${showcase.github_link}>Github</a>
-            </button>
-          </div>
-        </div>
-      `;
-        }
-      });
-      mapShowcases.reverse();
-      document.getElementById("showcase-container").innerHTML =
-        mapShowcases.join("");
+    //Project Showcase & Profile Images
+    initialiseProjects(projects, profileImageSources);
+    hamburgerUi();
+    buttonUi();
+    cvUi();
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+    showErrorMessage();
+  }
+};
 
-      return profileImageSources;
-    })
-    .then((profileImageSources) => {
-      // Load Images in Image Carousel
-      const profileImagesArray = profileImageSources;
-      const profileImage = document.getElementById("profile-image");
-      const profileImageMobile = document.getElementById(
-        "profile-image-mobile"
-      );
+function showErrorMessage() {
+  console.error("Failed to load projects");
+}
 
-      let currentIndex = 0;
-      setInterval(() => {
-        // Increment index and reset if it exceeds the array length
-        currentIndex = (currentIndex + 1) % profileImagesArray.length;
+//Load Projects & Profile Images
+function initialiseProjects(projects, profileImageSources) {
+  //Projects
+  const mapShowcases = projects.map((showcase) => {
+    if (showcase.github_link === null && showcase.website_link === null) {
+      return `
+          <div class="showcase-card">
+            <img class="showcase-img" src=${showcase.thumbnail} />
+            <div>
+              <h2>${showcase.title}</h2>
+              <p>${showcase.descrip}</p>
+            </div>
+            <div>
+              <button class="btn">
+                <a href=${showcase.other_link}>Visit</a>
+              </button>
+            </div>
+          </div>
+        `;
+    } else if (showcase.website_link === null) {
+      return `
+          <div class="showcase-card">
+            <img class="showcase-img" src=${showcase.thumbnail} />
+            <div>
+              <h2>${showcase.title}</h2>
+              <p>${showcase.descrip}</p>
+            </div>
+            <div>
+              <button class="btn">
+                <a href=${showcase.github_link}>Github</a>
+              </button>
+            </div>
+          </div>
+        `;
+    } else if (showcase.github_link === null) {
+      return `
+          <div class="showcase-card">
+            <img class="showcase-img" src=${showcase.thumbnail} />
+            <div>
+              <h2>${showcase.title}</h2>
+              <p>${showcase.descrip}</p>
+            </div>
+            <div>
+              <button class="btn">
+                <a href=${showcase.website_link}>Live</a>
+              </button>
+            </div>
+          </div>
+        `;
+    } else {
+      return `
+          <div class="showcase-card">
+            <img class="showcase-img" src=${showcase.thumbnail} />
+            <div>
+              <h2>${showcase.title}</h2>
+              <p>${showcase.descrip}</p>
+            </div>
+            <div>
+              <button class="btn">
+                <a href=${showcase.website_link}>Live</a>
+              </button>
+              <button class="btn">
+                <a href=${showcase.github_link}>Github</a>
+              </button>
+            </div>
+          </div>
+        `;
+    }
+  });
+  mapShowcases.reverse();
+  document.getElementById("showcase-container").innerHTML =
+    mapShowcases.join("");
 
-        // Update the image source
-        profileImage.src = profileImagesArray[currentIndex];
-        profileImageMobile.src = profileImagesArray[currentIndex];
-      }, 6000);
-    })
-    .catch((error) => {
-      console.error(`Error: ${error.message}`);
-    });
+  // Images
+  const profileImagesArray = profileImageSources;
+  const profileImage = document.getElementById("profile-image");
+  const profileImageMobile = document.getElementById("profile-image-mobile");
 
-  //Button hover effect
+  let currentIndex = 0;
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % profileImagesArray.length;
+
+    profileImage.src = profileImagesArray[currentIndex];
+    profileImageMobile.src = profileImagesArray[currentIndex];
+  }, 6000);
+}
+
+//Button hover effect
+function buttonUi() {
   const numberOfButtons = document.querySelectorAll(".btn").length;
 
   for (let i = 0; i < numberOfButtons; i++) {
@@ -114,7 +121,10 @@ window.onload = async function () {
         this.classList.remove("btnHighlight");
       });
   }
-  // Hamburger Menu Dropdown
+}
+
+// Hamburger Menu Dropdown
+function hamburgerUi() {
   const hamburgerSVG = document.querySelector(".hamburger");
   const dropdownList = document.querySelector(".dropdown-list");
   const closeMenuBtn = document.querySelector(".close-menu-btn");
@@ -131,7 +141,10 @@ window.onload = async function () {
       dropdownList.style.display = "none";
     });
   }
-  // CV Preview & Download
+}
+
+// CV Preview & Download
+function cvUi() {
   const cvDropdownBTN = document.getElementById("cv-btn");
   const cvDropdownDiv = document.getElementById("cv-dropdown");
   cvDropdownBTN.addEventListener("click", () => {
@@ -155,4 +168,4 @@ window.onload = async function () {
   closePreview.addEventListener("click", function () {
     previewFileDiv.classList.remove("display-preview");
   });
-};
+}

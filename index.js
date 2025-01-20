@@ -1,6 +1,10 @@
 window.onload = async function () {
   try {
-    const response = await fetch("https://backend-fmv0.onrender.com/projects");
+    const response = await fetchWithTimeout(
+      "https://backend-fmv0.onrender.com/projects",
+      {},
+      5000
+    );
     let { profileImageSources, projects } = await response.json();
 
     //Project Showcase & Profile Images
@@ -13,6 +17,27 @@ window.onload = async function () {
     showErrorMessage();
   }
 };
+
+async function fetchWithTimeout(url, options = {}, timeout = 3000) {
+  const controller = new AbortController();
+  const signal = controller.signal;
+
+  const timeoutId = setTimeout(() => {
+    controller.abort();
+  }, timeout);
+
+  try {
+    const response = await fetch(url, { ...options, signal });
+    clearTimeout(timeoutId);
+
+    return response;
+  } catch (error) {
+    if (error.name === "AbortError") {
+      throw new Error("Fetch request timed out");
+    }
+    throw error.message;
+  }
+}
 
 function showErrorMessage() {
   console.error("Failed to load projects");

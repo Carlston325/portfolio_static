@@ -1,4 +1,7 @@
 import backupProjects, { backupImages } from "./db.js";
+console.log(backupProjects);
+
+console.log(backupImages);
 
 window.onload = async function () {
   try {

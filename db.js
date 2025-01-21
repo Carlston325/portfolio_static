@@ -107,4 +107,5 @@ const backupProjects = [
   },
 ];
 
-export default { backupImages, backupProjects };
+export default backupProjects;
+export { backupImages };

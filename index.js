@@ -1,4 +1,4 @@
-import { backupImages, backupProjects } from "./db.js";
+import backupProjects, { backupImages } from "./db.js";
 
 window.onload = async function () {
   try {

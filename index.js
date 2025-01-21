@@ -1,3 +1,5 @@
+import { backupImages, backupProjects } from "./db.js";
+
 window.onload = async function () {
   try {
     const response = await fetchWithTimeout(
@@ -9,13 +11,20 @@ window.onload = async function () {
 
     //Project Showcase & Profile Images
     initialiseProjects(projects, profileImageSources);
-    hamburgerUi();
-    buttonUi();
-    cvUi();
   } catch (error) {
     console.error("Error fetching projects:", error);
+    console.warn(
+      "Network error or timeout occurred. Using backup data:",
+      error.message
+    );
     showErrorMessage();
+    let profileImageSources = backupImages;
+    let projects = backupProjects;
+    initialiseProjects(projects, profileImageSources);
   }
+  hamburgerUi();
+  buttonUi();
+  cvUi();
 };
 
 async function fetchWithTimeout(url, options = {}, timeout = 3000) {
